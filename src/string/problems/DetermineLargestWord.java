@@ -18,8 +18,29 @@ public class DetermineLargestWord {
 
     public static Map<Integer, String> findTheLargestWord(String wordGiven){
         Map<Integer, String> map = new HashMap<Integer, String>();
+
+
         String st = "";
         //implement
+        int max = 0;
+
+
+
+            	for(Map.Entry<Integer, String> entry : map.entrySet()){
+            			int key = 0;
+
+            			String value = entry.getValue();
+            			key = value.length();
+            			map.put(key, value);
+
+
+            		}
+            	for(Map.Entry<Integer, String> e : map.entrySet()){
+            	    st = e.getValue();
+            	    int key = st.length()
+
+
+                }
 
         return map;
     }
