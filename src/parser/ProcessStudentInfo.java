@@ -63,16 +63,20 @@ public class ProcessStudentInfo {
 
 				//add Selenium ArrayList data into map.
 
+					list.put("selenium", seleniumStudents);
+
+
 
 				//add Qtp ArrayList data into map.
 		
-		      	
+		      	list.put("qtp,", qtpStudents);
 				//Retrieve map data and display output.
 
 
 
 				//Store Qtp data into Qtp table in Database
-				connectToMongoDB.insertIntoMongoDB(seleniumStudents,"qtp");
+				connectToMongoDB.insertIntoMongoDB(qtpStudents,"qtp");
+				connectToMongoDB.insertIntoMongoDB(seleniumStudents, "selenium");
 				//connectToSqlDB.insertDataFromArrayListToMySql(seleniumStudents, "qtp","studentList");
 
 				//Store Selenium data into Selenium table in Database

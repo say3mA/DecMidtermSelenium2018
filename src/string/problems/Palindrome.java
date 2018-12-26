@@ -8,7 +8,7 @@ public class Palindrome {
           Palindrome. So write java code to check if a given String is Palindrome or not.
          */
     	System.out.println(isPalindrome("madam"));
-    	System.out.println(isPaldindrometwo("madam"));
+    	System.out.println(isPalindrometwo("madam"));
 
     }
     public static boolean isPalindrome(String s){
@@ -22,7 +22,7 @@ public class Palindrome {
         }
         else return false;
     }
-    public static boolean isPaldindrometwo(String s) {
+    public static boolean isPalindrometwo(String s) {
     	Stack<Character> a = new Stack<Character>();
     	for(int i = 0; i < s.length(); i++) {
     		a.push(s.charAt(i));

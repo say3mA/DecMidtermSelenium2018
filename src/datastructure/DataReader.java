@@ -52,6 +52,7 @@ public class DataReader {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
 		for(String a : list){
 			System.out.println(a);
 
@@ -63,7 +64,7 @@ public class DataReader {
 		String reverse = "";
 		while(!stack.isEmpty()){
 			reverse += stack.pop();
-			System.out.println(stack.pop());
+			//System.out.println(stack.pop());
 
 		}
 		System.out.println(reverse);
