@@ -1,8 +1,8 @@
 package datastructure;
-
+import java.util.Queue;
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.Queue;
+
 
 public class UseQueue {
 
@@ -12,22 +12,25 @@ public class UseQueue {
 		 * Use For Each loop and while loop with Iterator to retrieve data.
 		 * 
 		 */
-		Queue<Integer> q = new LinkedList<Integer>();
-		q.add(5);
-		q.add(3);
-		q.add(1);
-        for(Integer a : q){
-            System.out.println(a);
-        }
-        q.peek();
-        q.poll();
-        q.remove();
-        Iterator<Integer> t = q.iterator();
-		while(t.hasNext()){
-		    System.out.println(t.next());
-        }
-
-
+		Queue<Integer> queue = new LinkedList<Integer>();
+		queue.add(5);
+		queue.add(3);
+		queue.add(1);
+		Iterator iterator = queue.iterator();
+		while(iterator.hasNext()) {
+			System.out.println(iterator.next());
+			
+		}
+		System.out.println(queue.peek());
+		queue.remove();
+		queue.peek();
+		for(int i : queue) {
+			System.out.println(i);
+		}
+		queue.remove();
+		queue.remove();
+		queue.poll();
+		
 
 	}
 

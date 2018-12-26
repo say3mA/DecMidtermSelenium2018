@@ -13,7 +13,9 @@ public class Fibonacci {
          /*
           Write 40 Fibonacci numbers with java.
          */
-
+    	for(int i = 1; i <=40; i++) {
+    		System.out.print(fibonacci(i) + " ");
+    	}
 
     }
 }
