@@ -30,9 +30,7 @@ public class PrimeNumber {
                 return false;
             }
         }
-        // Search for prime numbers of the candidate.
-        // ... Primes are odd, smaller than the candidate.
-        // ... And a modulo division returns 0.
+
         for (int i = 3; (i * i) <= candidate; i += 2) {
             if ((candidate % i) == 0) {
                 return false;

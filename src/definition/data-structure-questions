@@ -3,30 +3,53 @@ Please answer the below Data Structure Questions:
 why do we need data structure?
 A.
 What are the various operations that can be performed on different Data Structures?
+insert, remove, search, peek
 List out the areas in which data structures are applied extensively?
+
 what is an Array?
+static memory
 what is the difference between the Array and ArrayList?
+Array's size is fixed, ArrayList can grow to accommodate
 what is LinkedList?
+Similar to ArrayList, but is composed of Nodes that have references to each other.
 How is an Array different from Linked List?
+Array's size is static, LinkedList can grow
 what is queue?
+FIFO structure
 what is stack?
+LIFO structure
 what is FIFO and LIFO?
+First in First Out, Last in First Out.
 what is the order of complexity?
+how much time and space a function needs
 what is the best case to search an element from an array?
+O(1)
 what is the worst case to search an element from an array?
+O(N)
 what is tree in data structure?
+non linear structure
 what is graph in data structure?
+non linear structure
 what is the difference between the HashTable and HashMap?
+HashMap uses map class that maps key value pairs
 What are the major data structures used in the following areas : RDBMS, Network data model and Hierarchical data model.
 How HashMap works in java?
 What is ArrayIndexOutOfBoundsException in java? When it occurs?
+Array index that does not exist gets accessed
 What are the different ways of copying an array into another array?
+Looping through it, using class functions
 What is difference between an array and a linked list?
+array is static size, linked list grows to fit the data
 What is DFS and BFS?
+depth first search on trees uses a queue structure, breadth first search on trees
 What is Recursion?
+when a program calls itself
 What are linear and non linear data Structures?
+linear - array, linked list, nonlinear- tree, graph
 What is Big-(O)-notation?
+way to describe how much time and space something requires to complete
 Outlined different kind of sorting algorithm with time complexity?
+Mergesort, quicksort, and heapsort are O(n log n) and bubblesort, insertion sort and all the others are O(n^2)
 
 Draw a table with time complexity in which it will summarize all the data structure feature's advantages and disadvantages.
   a)In terms of Accessing element.
