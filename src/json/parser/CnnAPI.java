@@ -67,11 +67,13 @@ public class CnnAPI {
         jsonArray =  root.getAsJsonArray();
     }
     //Employee[] a = new Employee[jsonArray.size()];
-        for (int i = 0; i < (jsonArray.size() - 2); i++) {
+
+        for(int i = 0; i<jsonArray.size()/2; i++) {
             try {
                 JsonObject jsonobject = jsonArray.get(i).getAsJsonObject();
-                JsonElement element = jsonobject.get("title");
+                JsonElement element = jsonobject.get("status");
                 System.out.println(element.toString());
+
             }
             catch(Exception e){}
             }
