@@ -1,5 +1,14 @@
 package datastructure;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.FileReader;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Stack;
+
 public class DataReader {
 
 	public static void main(String[] args) {
@@ -19,6 +28,45 @@ public class DataReader {
 		 */
 
 		String textFile = System.getProperty("user.dir") + "/src/data/self-driving-car.txt";
+		LinkedList<String> list = new LinkedList<String>();
+		Stack<String> stack = new Stack<String>();
+		try (BufferedReader br = new BufferedReader(new FileReader("/Users/MacUser/eclipse-workspace/midtermSeleniumDec2018/src/data/self-driving-car"))) {
+			while(br.ready()){
+				String s = br.readLine();
+				System.out.print(s);
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		try (BufferedReader br = new BufferedReader(new FileReader("/Users/MacUser/eclipse-workspace/midtermSeleniumDec2018/src/data/self-driving-car"))) {
+			while(br.ready()){
+				String s = br.readLine();
+
+				list.add(s);
+
+				stack.push(s);
+
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		for(String a : list){
+			System.out.println(a);
+
+		}
+		Iterator iterator = list.iterator();
+		while(iterator.hasNext()){
+			System.out.println(iterator.next());
+		}
+		String reverse = "";
+		while(!stack.isEmpty()){
+			reverse += stack.pop();
+			System.out.println(stack.pop());
+
+		}
+		System.out.println(reverse);
 
 
 

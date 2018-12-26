@@ -18,12 +18,11 @@ public class FindMissingNumber {
     public static int findMissin(int[] a){
          Arrays.sort(a);
          int missingNumber = 0;
-         for(int i = 0; i < a.length; i++){
-             if(a[i] != i+1){
-                 missingNumber = i+1;
+         for(int i = 0; i < a.length; i++)
+             if (a[i] != i + 1) {
+                 missingNumber = i + 1;
+                 break;
              }
-
-         }
         final int missingNumber1 = missingNumber;
         return missingNumber1;
 
