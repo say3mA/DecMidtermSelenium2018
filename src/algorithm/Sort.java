@@ -31,10 +31,22 @@ public class Sort {
         return list;
     }
 
-    public int[] insertionSort(int [] array){
+    public int[] insertionSort(int [] array) {
         final long startTime = System.currentTimeMillis();
-        int [] list = array;
+        int[] list = array;
         //implement here
+        int temp;
+        for (int i = 0; i < list.length; i++) {
+            for (int j = i; j > 0; j++) {
+                if (list[j] < list[j - 1]) {
+                    temp = list[j];
+                    list[j] = list[j - 1];
+                    list[j - 1] = temp;
+
+                }
+            }
+        }
+
 
 
 
@@ -46,7 +58,18 @@ public class Sort {
 
     public int[] bubbleSort(int [] array){
         int [] list = array;
+        int temp;
         //implement here
+        for(int i = 0; i < list.length - 1; i++){
+            for(int j = 0; j < list.length - 1 - i; j++){
+                if(list[j+1] > list[j]){
+                    temp = list[j];
+                    list[j] = list[j+1];
+                    list[j+1] = temp;
+
+                }
+            }
+        }
 
         
         

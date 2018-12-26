@@ -27,9 +27,9 @@ public class UseMap {
 		list.put("key", a);
 		Iterator<Entry<String, List<String>>> iterator = (Iterator<Entry<String, List<String>>>) list.entrySet().iterator();
 		while(iterator.hasNext()) {
-			Entry<String, List<String>> etnry = iterator.next();
-			System.out.println("Key: " + etnry.getKey());
-			System.out.println("Value: "+ etnry.getValue());
+			Entry<String, List<String>> entry = iterator.next();
+			System.out.println("Key: " + entry.getKey());
+			System.out.println("Value: "+ entry.getValue());
 			
 			
 		}

@@ -21,6 +21,8 @@ public class EmployeeInfo implements Employee {
 	 * declare few static and final fields and some non-static fields
 	 */
 	static String companyName;
+	public static final boolean raisesThisYear = false;
+
 	private int employeeId;
 	private String name;
 	
@@ -72,6 +74,9 @@ public class EmployeeInfo implements Employee {
 		String todaysDate = sc.nextLine();
         String convertedJoiningDate = DateConversion.convertDate(joiningDate);
         String convertedTodaysDate = DateConversion.convertDate(todaysDate);
+        int join = Integer.parseInt()
+
+
 
         //implement numbers of year from above two dates
 		//Calculate pension
