@@ -38,6 +38,12 @@ public class CsvReader {
             e.printStackTrace();
         }
         Collections.sort(roster);
+        int sum = 0;
+        for(Trainee student : roster){
+            sum+=student.getNumberOfExercisesSolved();
+
+        }
+        System.out.println("Average number of problems solved by the entire class: " + sum/roster.size());
         for(Trainee student:roster) {
             if (student.getNumberOfExercisesSolved()>=600) {
                 System.out.print("You did pretty good-->");

@@ -50,6 +50,7 @@ public class JsonReaderUtil {
         } else if (root instanceof JsonArray) {
             jsonArray =  root.getAsJsonArray();
         }
+        //Employee[] a = new Employee[jsonArray.size()];
         for (int i = 0; i < jsonArray.size()-1; i++) {
             try {
                 JsonObject jsonobject = jsonArray.get(i).getAsJsonObject();
@@ -59,6 +60,12 @@ public class JsonReaderUtil {
                 JsonElement salary = jsonobject.get("salary");
                 JsonElement department = jsonobject.get("department");
 
+
+               /** a[i].setDepartment(department.toString());
+                a[i].setEmpEmail(empEmail.toString());
+                a[i].setEmpName(empName.toString());
+                a[i].setSalary(salary.toString());
+**/
                 System.out.println(empEmail.toString() + " " + empName.toString() + " " + salary.toString() + " " + department.toString());
 
 
@@ -67,6 +74,9 @@ public class JsonReaderUtil {
             }
         }
         //Print to the console.
+        /**for(int i = 0; i < a.length-1; i++){
+            empList.add(i,a[i]);
+        }**/
         for(Employee entry:empList){
             System.out.println(entry.getEmpEmail()+" "+entry.getEmpName()+" "+entry.getSalary()+" "+entry.getDepartment());
         }
