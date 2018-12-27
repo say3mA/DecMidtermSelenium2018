@@ -4,6 +4,9 @@ package string.problems;
  * Created by mrahman on 04/22/17.
  */
 public class Permutation {
+    public static void permutation(String a){
+
+    }
 
     public static void main(String[] args) {
 

@@ -3,8 +3,9 @@ package json.parser;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
+import javax.json.Json;
+import javax.json.stream.JsonParser;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -49,32 +50,94 @@ public class CnnAPI {
 
 	   Show output of all the headline news in to console.
 	   Store into choice of your database and retrieve.
-
+https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=0d9e35dfa3c140aab8bf9cdd70df957f
      */
     public static void main(String[] args)throws MalformedURLException, IOException {
-    String sURL = "https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=0d9e35dfa3c140aab8bf9cdd70df957f";
-    Employee emp = null;
-    List<Employee> empList = new ArrayList<>();
-    URL url = new URL(sURL);
-    URLConnection request = url.openConnection();
+        String sURL = "https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=0d9e35dfa3c140aab8bf9cdd70df957f";
+        Employee emp = null;
+        List<Employee> empList = new ArrayList<>();
+        URL url = new URL(sURL);
+        /**URLConnection request = url.openConnection();
         request.connect();
-    JsonArray jsonArray = null;
-    JsonParser jp = new JsonParser();
-    JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
+        JsonArray jsonArray = null;
+        JsonParser jp = new JsonParser();
+        JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
         if (root instanceof JsonObject) {
-        JsonObject rootObj = root.getAsJsonObject();
-    } else if (root instanceof JsonArray) {
-        jsonArray =  root.getAsJsonArray();
-    }
-    //Employee[] a = new Employee[jsonArray.size()];
-
-        for(int i = 0; i<jsonArray.size()/2; i++) {
+            JsonObject rootObj = root.getAsJsonObject();
+        } else if (root instanceof JsonArray) {
+            jsonArray = root.getAsJsonArray();
+        }
+        //Employee[] a = new Employee[jsonArray.size()];
+        for (int i = 0; i < 10; i++) {
             try {
                 JsonObject jsonobject = jsonArray.get(i).getAsJsonObject();
-                JsonElement element = jsonobject.get("status");
-                System.out.println(element.toString());
+                JsonElement element = jsonobject.get("articles");
+                String a = element.toString();
+                System.out.print(a);
+            } catch (Exception e) {
+                System.out.print("error");
+            }**/
+        InputStream is = url.openStream();
+        JsonParser parser = Json.createParser(is);
+        while (parser.hasNext()) {
+                     JsonParser.Event e = parser.next();
+                     if (e == JsonParser.Event.KEY_NAME) {
+                             switch (parser.getString()) {
+                                    case "author":
+                                             parser.next();
+                                            System.out.print(parser.getString());
+                                            System.out.print(": ");
+                                            break;
+                                    case "title":
+                                            parser.next();
+                                            System.out.println(parser.getString());
+                                            System.out.println("---------");
+                                            break;
+                                 }
+                       }
 
-            }
-            catch(Exception e){}
-            }
-        }}
+        }
+    }}
+
+        //public static void main(String[] args)throws MalformedURLException, IOException {
+//        String sURL = "http://info.venturepulse.org:8080/service-webapp/api/AllEmployeeResources";
+//        Employee emp = null;
+//        List<Employee> empList = new ArrayList<>();
+//        URL url = new URL(sURL);
+//        URLConnection request = url.openConnection();
+//        request.connect();
+//        JsonArray  jsonArray = null;
+//        JsonParser jp = new JsonParser();
+//        JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
+//        if (root instanceof JsonObject) {
+//            JsonObject rootObj = root.getAsJsonObject();
+//        } else if (root instanceof JsonArray) {
+//            jsonArray =  root.getAsJsonArray();
+//        }
+//        //Employee[] a = new Employee[jsonArray.size()];
+//        for (int i = 0; i < jsonArray.size()-1; i++) {
+//            try {
+//                JsonObject jsonobject = jsonArray.get(i).getAsJsonObject();
+//                //you code start here
+//                JsonElement empEmail = jsonobject.get("empEmail");
+//                JsonElement empName = jsonobject.get("empName");
+//                JsonElement salary = jsonobject.get("salary");
+//                JsonElement department = jsonobject.get("department");
+//
+//
+//               /** a[i].setDepartment(department.toString());
+//                a[i].setEmpEmail(empEmail.toString());
+//                a[i].setEmpName(empName.toString());
+//                a[i].setSalary(salary.toString());
+//**/
+//                System.out.println(empEmail.toString() + " " + empName.toString() + " " + salary.toString() + " " + department.toString());
+//
+//
+//            }catch(Exception ex){
+//
+//            }
+//        }
+//        //Print to the console.
+//        /**for(int i = 0; i < a.length-1; i++){
+//            empList.add(i,a[i]);
+//        }**/
